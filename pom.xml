@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.adrianchia</groupId>
+  <artifactId>google-maps-java</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Google Maps Java</name>
+  <description>Unofficial Google Maps Web Service Client</description>
+  
+  <inceptionYear>2014</inceptionYear>
+  
+  <scm>
+    <connection>scm:git:https://github.com/adrianchia/google-maps-java.git</connection>
+    <developerConnection>scm:git:git@github.com/adrianchia/google-maps-java.git</developerConnection>
+    <url>https://github.com/adrianchia/google-maps-java</url>
+    <tag>HEAD</tag>
+  </scm>
+  
+  <issueManagement>
+    <system>GitHub Issues</system>
+    <url>https://github.com/adrianchia/google-maps-java/issues</url>
+  </issueManagement>
+
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  
+  <developers>
+    <developer>
+      <name>Adrian Chia</name>
+      <id>adrianchia</id>
+      <url>https://github.com/adrianchia</url>
+    </developer>
+  </developers>
+</project>
