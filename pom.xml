@@ -10,7 +10,6 @@
   <packaging>pom</packaging>
 
   <name>Google Maps Java</name>
-  <description>Unofficial Google Maps Web Service Client</description>
   
   <inceptionYear>2014</inceptionYear>
   
@@ -41,4 +40,18 @@
       <url>https://github.com/adrianchia</url>
     </developer>
   </developers>
+  
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.11</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+  	<module>google-maps-java-core</module>
+  </modules>
 </project>
