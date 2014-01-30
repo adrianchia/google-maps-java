@@ -11,14 +11,20 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.adrianchia.google.maps.directions;
+package org.adrianchia.google.maps;
+
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * Directions Response from The Google Directions API
- * 
  * @author Adrian Chia
- * 
+ *
  */
-public class DirectionsResponse {
+public abstract class TestBase {
+
+    protected static final Client client = ClientBuilder.newClient();
+    protected static final ObjectMapper mapper = new ObjectMapper();
 
 }

@@ -14,7 +14,10 @@
 package org.adrianchia.google.maps.distancematrix;
 
 /**
- * @author Adrian Chia 
+ * Distance Matrix Response from Distance Matrix API
+ * 
+ * @author Adrian Chia
+ * 
  */
 public class DistanceMatrixResponse {
 

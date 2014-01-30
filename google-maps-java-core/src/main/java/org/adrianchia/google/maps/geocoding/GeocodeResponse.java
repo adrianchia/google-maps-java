@@ -14,7 +14,10 @@
 package org.adrianchia.google.maps.geocoding;
 
 /**
- * @author Adrian Chia 
+ * Geocode Response from Geocoding API
+ * 
+ * @author Adrian Chia
+ * 
  */
 public class GeocodeResponse {
 

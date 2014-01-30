@@ -8,11 +8,6 @@
   <artifactId>google-maps-java-core</artifactId>
   <name>Google Maps Java Core Library</name>
   
-  <properties>
-    <maven.source.version>1.6</maven.source.version>
-    <maven.target.version>1.6</maven.target.version>
-  </properties>
-  
   <dependencies>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
@@ -43,32 +38,10 @@
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
-        <configuration>
-          <source>${maven.source.version}</source>
-          <target>${maven.target.version}</target>
-        </configuration>
       </plugin>
       
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.16</version>
-      </plugin>
-      
-      <plugin>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>2.11</version>
-      </plugin>
-      
-      <plugin>
-        <artifactId>maven-pmd-plugin</artifactId>
-        <version>3.0.1</version>
-      </plugin>
-      
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>findbugs-maven-plugin</artifactId>
-        <version>2.5</version>
       </plugin>
     </plugins>
   </build>

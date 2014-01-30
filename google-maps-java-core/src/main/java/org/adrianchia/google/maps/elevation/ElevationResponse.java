@@ -14,7 +14,10 @@
 package org.adrianchia.google.maps.elevation;
 
 /**
- * @author Adrian Chia 
+ * Elevation Response from Elevation API
+ * 
+ * @author Adrian Chia
+ * 
  */
 public class ElevationResponse {
 

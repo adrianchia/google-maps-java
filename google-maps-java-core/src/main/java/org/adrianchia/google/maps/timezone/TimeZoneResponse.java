@@ -19,8 +19,9 @@ import java.io.Serializable;
  * Time Zone Response from TimeZone API
  * 
  * @author Adrian Chia
+ * 
  */
-public class TimezoneResponse implements Serializable {
+public class TimeZoneResponse implements Serializable {
 
     /**
      * 
@@ -62,7 +63,7 @@ public class TimezoneResponse implements Serializable {
      */
     private String errorMessage;
 
-    public TimezoneResponse() {
+    public TimeZoneResponse() {
 
     }
 
