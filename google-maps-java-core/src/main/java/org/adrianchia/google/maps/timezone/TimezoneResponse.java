@@ -28,21 +28,38 @@ public class TimezoneResponse implements Serializable {
     private static final long serialVersionUID = -1124356138520506831L;
 
     /**
-     * The offset for daylight-savings time in seconds. This will be zero if the time zone is not in Daylight Savings Time during the specified timestamp.
+     * The offset for daylight-savings time in seconds. 
+     * This will be zero if the time zone is not in Daylight Savings Time during the specified timestamp.
      */
     private float dstOffset;
 
     /**
-     * The offset from UTC (in seconds) for the given location. This does not take into effect daylight savings. 
+     * The offset from UTC (in seconds) for the given location. 
+     * This does not take into effect daylight savings. 
      */
     private float rawOffset;
 
+    /**
+     * A string containing the ID of the time zone, 
+     * such as "America/Los_Angeles" or "Australia/Sydney". 
+     */
     private String timeZoneId;
 
+    /**
+     * A string containing the long form name of the time zone. 
+     * This field will be localized if the language parameter is set. 
+     * eg. "Pacific Daylight Time" or "Australian Eastern Daylight Time" 
+     */
     private String timeZoneName;
 
+    /**
+     * a string indicating the status of the response. 
+     */
     private String status;
 
+    /**
+     * more detailed information about the reasons behind the given status code, if other than OK.
+     */
     private String errorMessage;
 
     public TimezoneResponse() {
