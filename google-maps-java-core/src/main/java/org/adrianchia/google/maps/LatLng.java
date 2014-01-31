@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @author Adrian Chia
  *
  */
-public class Point implements Serializable {
+public class LatLng implements Serializable {
 
     private static final long serialVersionUID = -9174020635115247227L;
 

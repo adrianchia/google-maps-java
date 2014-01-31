@@ -14,6 +14,7 @@
 package org.adrianchia.google.maps.directions;
 
 import java.io.Serializable;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -47,7 +48,7 @@ public class Line implements Serializable {
     private String url;
 
     @JsonProperty("agencies")
-    private Agency[] agencies;
+    private List<Agency> agencies;
 
     @JsonProperty("vehicle")
     private Vehicle vehicle;
@@ -100,11 +101,11 @@ public class Line implements Serializable {
         this.url = url;
     }
 
-    public Agency[] getAgencies() {
+    public List<Agency> getAgencies() {
         return agencies;
     }
 
-    public void setAgencies(Agency[] agencies) {
+    public void setAgencies(List<Agency> agencies) {
         this.agencies = agencies;
     }
 

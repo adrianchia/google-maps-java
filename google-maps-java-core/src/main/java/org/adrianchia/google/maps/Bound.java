@@ -26,24 +26,24 @@ public class Bound implements Serializable {
     private static final long serialVersionUID = 4475408440445897547L;
 
     @JsonProperty("northeast")
-    private Point northeast;
+    private LatLng northeast;
     
     @JsonProperty("southwest")
-    private Point southwest;
+    private LatLng southwest;
 
-    public Point getNortheast() {
+    public LatLng getNortheast() {
         return northeast;
     }
 
-    public void setNortheast(Point northeast) {
+    public void setNortheast(LatLng northeast) {
         this.northeast = northeast;
     }
 
-    public Point getSouthwest() {
+    public LatLng getSouthwest() {
         return southwest;
     }
 
-    public void setSouthwest(Point southwest) {
+    public void setSouthwest(LatLng southwest) {
         this.southwest = southwest;
     }
 

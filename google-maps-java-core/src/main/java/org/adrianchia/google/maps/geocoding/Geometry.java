@@ -16,7 +16,7 @@ package org.adrianchia.google.maps.geocoding;
 import java.io.Serializable;
 
 import org.adrianchia.google.maps.Bound;
-import org.adrianchia.google.maps.Point;
+import org.adrianchia.google.maps.LatLng;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -32,7 +32,7 @@ public class Geometry implements Serializable {
     private static final long serialVersionUID = 4157066072305461521L;
 
     @JsonProperty("location")
-    private Point location;
+    private LatLng location;
 
     @JsonProperty("location_type")
     private String locationType;
@@ -43,11 +43,11 @@ public class Geometry implements Serializable {
     @JsonProperty("bounds")
     private Bound bounds;
 
-    public Point getLocation() {
+    public LatLng getLocation() {
         return location;
     }
 
-    public void setLocation(Point location) {
+    public void setLocation(LatLng location) {
         this.location = location;
     }
 

@@ -14,10 +14,11 @@
 package org.adrianchia.google.maps.directions;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.adrianchia.google.maps.Distance;
 import org.adrianchia.google.maps.Duration;
-import org.adrianchia.google.maps.Point;
+import org.adrianchia.google.maps.LatLng;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -42,10 +43,10 @@ public class Step implements Serializable {
     private Duration duration;
 
     @JsonProperty("start_location")
-    private Point startLocation;
+    private LatLng startLocation;
 
     @JsonProperty("end_location")
-    private Point endLocation;
+    private LatLng endLocation;
 
     @JsonProperty("travel_mode")
     private String travelMode;
@@ -57,7 +58,7 @@ public class Step implements Serializable {
     private String maneuver;
 
     @JsonProperty("sub_steps")
-    private Step[] subSteps;
+    private List<Step> subSteps;
 
     @JsonProperty("transit_details")
     private TransitDetail transitDetails;
@@ -86,19 +87,19 @@ public class Step implements Serializable {
         this.duration = duration;
     }
 
-    public Point getStartLocation() {
+    public LatLng getStartLocation() {
         return startLocation;
     }
 
-    public void setStartLocation(Point startLocation) {
+    public void setStartLocation(LatLng startLocation) {
         this.startLocation = startLocation;
     }
 
-    public Point getEndLocation() {
+    public LatLng getEndLocation() {
         return endLocation;
     }
 
-    public void setEndLocation(Point endLocation) {
+    public void setEndLocation(LatLng endLocation) {
         this.endLocation = endLocation;
     }
 
@@ -126,11 +127,11 @@ public class Step implements Serializable {
         this.maneuver = maneuver;
     }
 
-    public Step[] getSubSteps() {
+    public List<Step> getSubSteps() {
         return subSteps;
     }
 
-    public void setSubSteps(Step[] subSteps) {
+    public void setSubSteps(List<Step> subSteps) {
         this.subSteps = subSteps;
     }
 

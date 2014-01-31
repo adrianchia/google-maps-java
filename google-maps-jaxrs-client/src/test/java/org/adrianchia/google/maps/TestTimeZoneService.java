@@ -15,25 +15,18 @@ package org.adrianchia.google.maps;
 
 import static org.junit.Assert.*;
 
-import org.adrianchia.google.maps.timezone.TimeZoneResponse;
 import org.junit.Test;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
 
 /**
  * @author Adrian Chia
  *
  */
-public class TimeZoneServiceIT extends TestBase {
-
-    private static TimeZoneService tzService = new TimeZoneService();
+public class TestTimeZoneService {
 
     @Test
-    public void testGetTimeZoneAsEntity() throws JsonProcessingException {        
-        TimeZoneResponse tzResponse = tzService.getAsEntity(
-                "29.85240200", "-95.504595500", 1391106797, false);
-        assertEquals(Status.OK, tzResponse.getStatus());
-        System.out.println(mapper.writeValueAsString(tzResponse));
+    public void testToUnixTimeStamp() {
+        long millis = 1391108198948L;
+        long result = TimeZoneService.toUnixTimestamp(millis);
+        assertEquals(1391108198L, result);
     }
-
 }

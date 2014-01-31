@@ -14,10 +14,11 @@
 package org.adrianchia.google.maps.directions;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.adrianchia.google.maps.Distance;
 import org.adrianchia.google.maps.Duration;
-import org.adrianchia.google.maps.Point;
+import org.adrianchia.google.maps.LatLng;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -33,7 +34,7 @@ public class Leg implements Serializable {
     private static final long serialVersionUID = 770028273729065126L;
 
     @JsonProperty("steps")
-    private Step[] steps;
+    private List<Step> steps;
 
     @JsonProperty("distance")
     private Distance distance;
@@ -51,10 +52,10 @@ public class Leg implements Serializable {
     private Time departureTime;
 
     @JsonProperty("start_location")
-    private Point startLocation;
+    private LatLng startLocation;
 
     @JsonProperty("end_location")
-    private Point endLocation;
+    private LatLng endLocation;
 
     @JsonProperty("start_address")
     private String startAddress;
@@ -63,13 +64,13 @@ public class Leg implements Serializable {
     private String endAddress;
     
     @JsonProperty("via_waypoint")
-    private String[] viaWayPoint;
+    private List<String> viaWayPoint;
 
-    public Step[] getSteps() {
+    public List<Step> getSteps() {
         return steps;
     }
 
-    public void setSteps(Step[] steps) {
+    public void setSteps(List<Step> steps) {
         this.steps = steps;
     }
 
@@ -113,19 +114,19 @@ public class Leg implements Serializable {
         this.departureTime = departureTime;
     }
 
-    public Point getStartLocation() {
+    public LatLng getStartLocation() {
         return startLocation;
     }
 
-    public void setStartLocation(Point startLocation) {
+    public void setStartLocation(LatLng startLocation) {
         this.startLocation = startLocation;
     }
 
-    public Point getEndLocation() {
+    public LatLng getEndLocation() {
         return endLocation;
     }
 
-    public void setEndLocation(Point endLocation) {
+    public void setEndLocation(LatLng endLocation) {
         this.endLocation = endLocation;
     }
 
@@ -145,11 +146,11 @@ public class Leg implements Serializable {
         this.endAddress = endAddress;
     }
 
-    public String[] getViaWayPoint() {
+    public List<String> getViaWayPoint() {
         return viaWayPoint;
     }
 
-    public void setViaWayPoint(String[] viaWayPoint) {
+    public void setViaWayPoint(List<String> viaWayPoint) {
         this.viaWayPoint = viaWayPoint;
     }
 

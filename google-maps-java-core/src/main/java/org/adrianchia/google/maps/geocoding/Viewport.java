@@ -13,7 +13,7 @@
  */
 package org.adrianchia.google.maps.geocoding;
 
-import org.adrianchia.google.maps.Point;
+import org.adrianchia.google.maps.LatLng;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -29,24 +29,24 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Viewport {
     
     @JsonProperty("southwest")
-    private Point southwest;
+    private LatLng southwest;
 
     @JsonProperty("northeast")
-    private Point northeast;
+    private LatLng northeast;
 
-    public Point getSouthwest() {
+    public LatLng getSouthwest() {
         return southwest;
     }
 
-    public void setSouthwest(Point southwest) {
+    public void setSouthwest(LatLng southwest) {
         this.southwest = southwest;
     }
 
-    public Point getNortheast() {
+    public LatLng getNortheast() {
         return northeast;
     }
 
-    public void setNortheast(Point northeast) {
+    public void setNortheast(LatLng northeast) {
         this.northeast = northeast;
     }
 

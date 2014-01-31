@@ -15,7 +15,7 @@ package org.adrianchia.google.maps.elevation;
 
 import java.io.Serializable;
 
-import org.adrianchia.google.maps.Point;
+import org.adrianchia.google.maps.LatLng;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -31,7 +31,7 @@ public class Result implements Serializable {
     private double elevation;
 
     @JsonProperty("location")
-    private Point location;
+    private LatLng location;
 
     @JsonProperty("resolution")
     private double resolution;
@@ -44,11 +44,11 @@ public class Result implements Serializable {
         this.elevation = elevation;
     }
 
-    public Point getLocation() {
+    public LatLng getLocation() {
         return location;
     }
 
-    public void setLocation(Point location) {
+    public void setLocation(LatLng location) {
         this.location = location;
     }
 

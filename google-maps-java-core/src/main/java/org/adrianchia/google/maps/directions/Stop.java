@@ -15,7 +15,7 @@ package org.adrianchia.google.maps.directions;
 
 import java.io.Serializable;
 
-import org.adrianchia.google.maps.Point;
+import org.adrianchia.google.maps.LatLng;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -31,7 +31,7 @@ public class Stop implements Serializable {
     private String name;
 
     @JsonProperty("location")
-    private Point location;
+    private LatLng location;
 
     public String getName() {
         return name;
@@ -41,11 +41,11 @@ public class Stop implements Serializable {
         this.name = name;
     }
 
-    public Point getLocation() {
+    public LatLng getLocation() {
         return location;
     }
 
-    public void setLocation(Point location) {
+    public void setLocation(LatLng location) {
         this.location = location;
     }
 

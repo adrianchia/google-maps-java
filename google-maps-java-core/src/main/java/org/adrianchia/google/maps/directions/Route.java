@@ -14,6 +14,7 @@
 package org.adrianchia.google.maps.directions;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.adrianchia.google.maps.Bound;
 
@@ -37,16 +38,16 @@ public class Route implements Serializable {
     private Bound bounds;
 
     @JsonProperty("legs")
-    private Leg[] legs;
+    private List<Leg> legs;
 
     @JsonProperty("overview_polyline")
     private Polyline overviewPolyline;
 
     @JsonProperty("warnings")
-    private String[] warnings;
+    private List<String> warnings;
 
     @JsonProperty("waypoint_order")
-    private Integer[] waypointOrder;
+    private List<Integer> waypointOrder;
 
     public String getSummary() {
         return summary;
@@ -72,11 +73,11 @@ public class Route implements Serializable {
         this.bounds = bounds;
     }
 
-    public Leg[] getLegs() {
+    public List<Leg> getLegs() {
         return legs;
     }
 
-    public void setLegs(Leg[] legs) {
+    public void setLegs(List<Leg> legs) {
         this.legs = legs;
     }
 
@@ -88,19 +89,19 @@ public class Route implements Serializable {
         this.overviewPolyline = overviewPolyline;
     }
 
-    public String[] getWarnings() {
+    public List<String> getWarnings() {
         return warnings;
     }
 
-    public void setWarnings(String[] warnings) {
+    public void setWarnings(List<String> warnings) {
         this.warnings = warnings;
     }
 
-    public Integer[] getWaypointOrder() {
+    public List<Integer> getWaypointOrder() {
         return waypointOrder;
     }
 
-    public void setWaypointOrder(Integer[] waypointOrder) {
+    public void setWaypointOrder(List<Integer> waypointOrder) {
         this.waypointOrder = waypointOrder;
     }
 
