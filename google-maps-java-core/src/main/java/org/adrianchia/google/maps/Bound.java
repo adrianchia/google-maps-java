@@ -11,37 +11,40 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.adrianchia.google.maps.elevation;
+package org.adrianchia.google.maps;
 
 import java.io.Serializable;
-import java.util.List;
-
-import javax.xml.bind.annotation.XmlRootElement;
-
-import org.adrianchia.google.maps.AbstractResponse;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Elevation Response from Elevation API
- * 
  * @author Adrian Chia
- * 
+ *
  */
-@XmlRootElement
-public class ElevationResponse extends AbstractResponse implements Serializable {
+public class Bound implements Serializable {
 
-    private static final long serialVersionUID = -20698817716478080L;
+    private static final long serialVersionUID = 4475408440445897547L;
 
-    @JsonProperty("results")
-    private List<Result> results;
+    @JsonProperty("northeast")
+    private Point northeast;
+    
+    @JsonProperty("southwest")
+    private Point southwest;
 
-    public List<Result> getResults() {
-        return results;
+    public Point getNortheast() {
+        return northeast;
     }
 
-    public void setResults(List<Result> results) {
-        this.results = results;
+    public void setNortheast(Point northeast) {
+        this.northeast = northeast;
+    }
+
+    public Point getSouthwest() {
+        return southwest;
+    }
+
+    public void setSouthwest(Point southwest) {
+        this.southwest = southwest;
     }
 
 }

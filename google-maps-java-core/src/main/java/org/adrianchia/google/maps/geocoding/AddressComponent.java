@@ -16,38 +16,47 @@ package org.adrianchia.google.maps.geocoding;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
-import org.adrianchia.google.maps.AbstractResponse;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Geocode Response from Geocoding API
- * @see <a href="https://developers.google.com/maps/documentation/geocoding/#GeocodingResponses">
- * https://developers.google.com/maps/documentation/geocoding/#GeocodingResponses</a>
- * 
  * @author Adrian Chia
- * 
+ *
  */
-@XmlRootElement
-public class GeocodeResponse extends AbstractResponse implements Serializable {
+public class AddressComponent implements Serializable {
 
-    private static final long serialVersionUID = -646069611515366155L;
+    private static final long serialVersionUID = 2033507824899970153L;
 
-    @JsonProperty("results")
-    private List<Result> results;
+    @JsonProperty("long_name")
+    private String longName;
+    
+    @JsonProperty("short_name")
+    private String shortName;
+    
+    @JsonProperty("types")
+    private List<String> types;
 
-    public GeocodeResponse() {
-
+    public String getLongName() {
+        return longName;
     }
 
-    public List<Result> getResults() {
-        return results;
+    public void setLongName(String longName) {
+        this.longName = longName;
     }
 
-    public void setResults(List<Result> results) {
-        this.results = results;
+    public String getShortName() {
+        return shortName;
+    }
+
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
+    }
+
+    public List<String> getTypes() {
+        return types;
+    }
+
+    public void setTypes(List<String> types) {
+        this.types = types;
     }
 
 }

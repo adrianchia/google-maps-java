@@ -13,18 +13,27 @@
  */
 package org.adrianchia.google.maps;
 
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
+import static org.junit.Assert.*;
+
+import org.adrianchia.google.maps.elevation.ElevationResponse;
+import org.junit.Test;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 /**
  * @author Adrian Chia
  *
  */
-public interface MapsService {
+public class ElevationServiceIT extends TestBase {
 
-    static final Client client = ClientBuilder.newClient();
+    private static ElevationService elService = new ElevationService();
 
-    static final String BASE_URL = "http://maps.googleapis.com/maps/api";
-    
-    static final String SECURE_BASE_URL = "https://maps.googleapis.com/maps/api";
+    @Test
+    public void testGetAsEntity() throws JsonProcessingException {
+        ElevationResponse elResponse = 
+                elService.getAsEntity("39.7391536,-104.9847034", false);
+        assertEquals(Status.OK, elResponse.getStatus());
+        System.out.println(mapper.writeValueAsString(elResponse));
+    }
+
 }

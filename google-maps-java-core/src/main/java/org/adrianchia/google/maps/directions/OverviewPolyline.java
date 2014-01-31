@@ -11,37 +11,32 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.adrianchia.google.maps.elevation;
+package org.adrianchia.google.maps.directions;
 
 import java.io.Serializable;
-import java.util.List;
-
-import javax.xml.bind.annotation.XmlRootElement;
-
-import org.adrianchia.google.maps.AbstractResponse;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Elevation Response from Elevation API
- * 
  * @author Adrian Chia
- * 
+ *
  */
-@XmlRootElement
-public class ElevationResponse extends AbstractResponse implements Serializable {
+public class OverviewPolyline implements Serializable {
 
-    private static final long serialVersionUID = -20698817716478080L;
+    /**
+     * 
+     */
+    private static final long serialVersionUID = -5751878639825030129L;
 
-    @JsonProperty("results")
-    private List<Result> results;
+    @JsonProperty("points")
+    private String points;
 
-    public List<Result> getResults() {
-        return results;
+    public String getPoints() {
+        return points;
     }
 
-    public void setResults(List<Result> results) {
-        this.results = results;
+    public void setPoints(String points) {
+        this.points = points;
     }
 
 }

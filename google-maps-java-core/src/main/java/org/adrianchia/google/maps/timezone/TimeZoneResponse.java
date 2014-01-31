@@ -15,13 +15,18 @@ package org.adrianchia.google.maps.timezone;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+import org.adrianchia.google.maps.AbstractResponse;
+
 /**
  * Time Zone Response from TimeZone API
  * 
  * @author Adrian Chia
  * 
  */
-public class TimeZoneResponse implements Serializable {
+@XmlRootElement
+public class TimeZoneResponse extends AbstractResponse implements Serializable {
 
     /**
      * 
@@ -53,18 +58,8 @@ public class TimeZoneResponse implements Serializable {
      */
     private String timeZoneName;
 
-    /**
-     * a string indicating the status of the response. 
-     */
-    private String status;
-
-    /**
-     * more detailed information about the reasons behind the given status code, if other than OK.
-     */
-    private String errorMessage;
-
     public TimeZoneResponse() {
-
+        super();
     }
 
     public float getDstOffset() {
@@ -97,22 +92,6 @@ public class TimeZoneResponse implements Serializable {
 
     public void setTimeZoneName(String timeZoneName) {
         this.timeZoneName = timeZoneName;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getErrorMessage() {
-        return errorMessage;
-    }
-
-    public void setErrorMessage(String errorMessage) {
-        this.errorMessage = errorMessage;
     }
 
 }

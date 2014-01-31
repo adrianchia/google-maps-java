@@ -19,13 +19,18 @@ import javax.ws.rs.core.Response;
 import org.adrianchia.google.maps.timezone.TimeZoneResponse;
 
 /**
+ * JAX-RS Client wrapper for the Google Time Zone API
+ * @see <a href="https://developers.google.com/maps/documentation/timezone/">
+ * https://developers.google.com/maps/documentation/timezone/</a>
+ * 
  * @author Adrian Chia
  *
  */
 public class TimeZoneService implements MapsService {
 
-    public static final String BASE_URL = "https://maps.googleapis.com/maps/api/timezone/";
-    
+    public static final String SERVICE_PATH = "/timezone";
+    public static final String ENDPOINT_URL = SECURE_BASE_URL + SERVICE_PATH;
+
     /**
      * Get Time Zone Response as {@link TimeZoneResponse} Object
      * @param latitude
@@ -43,7 +48,7 @@ public class TimeZoneService implements MapsService {
         if(latitude == null || longitude == null) {
             throw new IllegalArgumentException("Latitude and longitude is missing");
         }
-        WebTarget target = client.target(BASE_URL + "json");
+        WebTarget target = client.target(ENDPOINT_URL + "/json");
         Response response = target
                 .queryParam("location", latitude + "," +longitude)
                 .queryParam("timestamp", timestamp)
@@ -52,36 +57,12 @@ public class TimeZoneService implements MapsService {
                 .get();
         return response.readEntity(TimeZoneResponse.class);
     }
-    
-    /**
-     * Get Time Zone Response as {@link TimeZoneResponse} Object
-     * @param latitude
-     * @param longitude
-     * @param timestamp specifies the desired time as seconds since midnight, January 1, 1970 UTC.
-     *                  The Time Zone API uses the timestamp to determine whether or not 
-     *                  Daylight Savings should be applied. 
-     *                  Times before 1970 can be expressed as negative values.
-     * @param sensor specifies whether the application requesting data is using a sensor 
-     *               (such as a GPS device) to determine the user's location. 
-     *               Accepts true or false.
-     */
-    public String getAsString(String latitude, String longitude, 
-            long timestamp, boolean sensor, String format) {
-        WebTarget target = client.target(BASE_URL + format);
-        Response response = target
-                .queryParam("location", latitude + "," +longitude)
-                .queryParam("timestamp", timestamp)
-                .queryParam("sensor", sensor)
-                .request()
-                .get();
-        return response.readEntity(String.class);
-    }
-    
+
     /**
      * Convert miliseconds to unix timestamp.
      */
     public static long toUnixTimestamp(long millis) {
         return millis / 1000L;
     }
-    
+
 }

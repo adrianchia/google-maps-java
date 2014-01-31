@@ -11,20 +11,19 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.adrianchia.google.maps;
+package org.adrianchia.google.maps.directions;
 
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
+import java.io.Serializable;
 
 /**
  * @author Adrian Chia
  *
  */
-public interface MapsService {
+public class Step implements Serializable {
 
-    static final Client client = ClientBuilder.newClient();
+    /**
+     * 
+     */
+    private static final long serialVersionUID = -4644637763453084581L;
 
-    static final String BASE_URL = "http://maps.googleapis.com/maps/api";
-    
-    static final String SECURE_BASE_URL = "https://maps.googleapis.com/maps/api";
 }

@@ -13,12 +13,32 @@
  */
 package org.adrianchia.google.maps.directions;
 
+import java.io.Serializable;
+import java.util.List;
+
+import org.adrianchia.google.maps.AbstractResponse;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Directions Response from The Google Directions API
  * 
  * @author Adrian Chia
  * 
  */
-public class DirectionsResponse {
+public class DirectionsResponse extends AbstractResponse implements Serializable {
+
+    private static final long serialVersionUID = 6512712330297597934L;
+    
+    @JsonProperty("routes")
+    private List<Route> routes;
+
+    public List<Route> getRoutes() {
+        return routes;
+    }
+
+    public void setRoutes(List<Route> routes) {
+        this.routes = routes;
+    }
 
 }

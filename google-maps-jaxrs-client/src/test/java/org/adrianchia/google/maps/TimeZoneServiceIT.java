@@ -15,23 +15,18 @@ package org.adrianchia.google.maps;
 
 import static org.junit.Assert.*;
 
-import java.util.logging.Logger;
-
 import org.adrianchia.google.maps.timezone.TimeZoneResponse;
-import org.junit.Ignore;
 import org.junit.Test;
 
 /**
  * @author Adrian Chia
  *
  */
-public class TimeZoneServiceTest extends TestBase {
+public class TimeZoneServiceIT extends TestBase {
 
-    private static Logger log = Logger.getLogger(TimeZoneServiceTest.class.getName());
     private static TimeZoneService tzService = new TimeZoneService();
 
     @Test
-    @Ignore
     public void testGetTimeZoneAsEntity() {        
         TimeZoneResponse tzResponse = tzService.getAsEntity(
                 "29.85240200", "-95.504595500", 1391106797, false);
@@ -39,18 +34,10 @@ public class TimeZoneServiceTest extends TestBase {
     }
 
     @Test
-    @Ignore
-    public void testGetTimeZoneAsString() {
-        String tzResponse = tzService.getAsString(
-                "29.85240200", "-95.504595500", 1391106797, false, "json");
-        assertNotNull(tzResponse);
-        log.info(tzResponse);
-    }
-    
-    @Test
     public void testToUnixTimeStamp() {
         long millis = 1391108198948L;
         long result = TimeZoneService.toUnixTimestamp(millis);
         assertEquals(1391108198L, result);
     }
+
 }
