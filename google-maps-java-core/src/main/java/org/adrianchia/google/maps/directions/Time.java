@@ -14,21 +14,49 @@
 package org.adrianchia.google.maps.directions;
 
 import java.io.Serializable;
-import org.adrianchia.google.maps.AbstractResponse;
+import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Directions Response from The Google Directions API
- * 
  * @author Adrian Chia
- * 
+ *
  */
-public class DirectionsResponse extends AbstractResponse implements Serializable {
+public class Time implements Serializable {
 
-    private static final long serialVersionUID = 6512712330297597934L;
+    private static final long serialVersionUID = -3326562794176041836L;
 
-    @JsonProperty("routes")
-    private Route[] routes;
+    @JsonProperty("value")
+    private Date value;
+
+    @JsonProperty("text")
+    private String text;
+
+    @JsonProperty("time_zone")
+    private String timeZone;
+
+    public Date getValue() {
+        return value;
+    }
+
+    public void setValue(Date value) {
+        this.value = value;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getTimeZone() {
+        return timeZone;
+    }
+
+    public void setTimeZone(String timeZone) {
+        this.timeZone = timeZone;
+    }
 
 }

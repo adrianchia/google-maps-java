@@ -21,22 +21,33 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @author Adrian Chia
  *
  */
-public class OverviewPolyline implements Serializable {
+public class DurationInTraffic implements Serializable {
 
     /**
      * 
      */
-    private static final long serialVersionUID = -5751878639825030129L;
+    private static final long serialVersionUID = 9211243594176660258L;
 
-    @JsonProperty("points")
-    private String points;
+    @JsonProperty("value")
+    private long value;
+    
+    @JsonProperty("text")
+    private String text;
 
-    public String getPoints() {
-        return points;
+    public long getValue() {
+        return value;
     }
 
-    public void setPoints(String points) {
-        this.points = points;
+    public void setValue(long value) {
+        this.value = value;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 
 }

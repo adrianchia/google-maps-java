@@ -14,21 +14,39 @@
 package org.adrianchia.google.maps.directions;
 
 import java.io.Serializable;
-import org.adrianchia.google.maps.AbstractResponse;
+
+import org.adrianchia.google.maps.Point;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Directions Response from The Google Directions API
- * 
  * @author Adrian Chia
- * 
+ *
  */
-public class DirectionsResponse extends AbstractResponse implements Serializable {
+public class Stop implements Serializable {
 
-    private static final long serialVersionUID = 6512712330297597934L;
+    private static final long serialVersionUID = -2105288574515399611L;
 
-    @JsonProperty("routes")
-    private Route[] routes;
+    @JsonProperty("name")
+    private String name;
+
+    @JsonProperty("location")
+    private Point location;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Point getLocation() {
+        return location;
+    }
+
+    public void setLocation(Point location) {
+        this.location = location;
+    }
 
 }

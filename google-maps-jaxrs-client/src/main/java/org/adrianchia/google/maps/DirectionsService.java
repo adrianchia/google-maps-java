@@ -16,43 +16,38 @@ package org.adrianchia.google.maps;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Response;
 
-import org.adrianchia.google.maps.distancematrix.DistanceMatrixResponse;
+import org.adrianchia.google.maps.directions.DirectionsResponse;
 
 /**
- * JAX-RS Client Wrapper for the Google Distance Matrix API.
- * @see <a href="https://developers.google.com/maps/documentation/distancematrix/">
- * https://developers.google.com/maps/documentation/distancematrix/</a>
- * 
  * @author Adrian Chia
  *
  */
-public class DistanceMatrixService implements MapsService {
-
-    public static final String SERVICE_PATH = "/distancematrix";
+public class DirectionsService implements MapsService {
     
+    public static final String SERVICE_PATH = "/directions";
+
     /**
-     * Get Distance Matrix Response as {@link DistanceMatrixResponse} Object
+     * Get Directions Response as {@link DirectionsResponse} Object
      * @param origins one or more lat,lng, separated by |
      * @param destinations one or more lat,lng, separated by |
      * @param sensor specifies whether the application requesting data is using a sensor 
      *               (such as a GPS device) to determine the user's location. 
      *               Accepts true or false.
      */
-    public DistanceMatrixResponse getAsEntity(
-            final String origins, 
-            final String destinations, 
+    public DirectionsResponse getAsEntity(
+            final String origin, 
+            final String destination, 
             final boolean sensor) {
-        if(origins == null || destinations == null) {
+        if(origin == null || destination == null) {
             throw new IllegalArgumentException("origins/destinations is missing");
         }
         WebTarget target = client.target(BASE_URL + SERVICE_PATH + "/json");
         Response resp = target
-                .queryParam("origins", origins.replace(' ', '+'))
-                .queryParam("destinations", destinations.replace(' ', '+'))
+                .queryParam("origin", origin.replace(' ', '+'))
+                .queryParam("destination", destination.replace(' ', '+'))
                 .queryParam("sensor", sensor)
                 .request()
                 .get();
-        return resp.readEntity(DistanceMatrixResponse.class);
+        return resp.readEntity(DirectionsResponse.class);
     }
-
 }

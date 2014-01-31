@@ -14,10 +14,10 @@
 package org.adrianchia.google.maps.directions;
 
 import java.io.Serializable;
-import java.util.List;
 
 import org.adrianchia.google.maps.Distance;
 import org.adrianchia.google.maps.Duration;
+import org.adrianchia.google.maps.Point;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -33,11 +33,124 @@ public class Leg implements Serializable {
     private static final long serialVersionUID = 770028273729065126L;
 
     @JsonProperty("steps")
-    private List<Step> steps;
-    
+    private Step[] steps;
+
     @JsonProperty("distance")
     private Distance distance;
-    
+
     @JsonProperty("duration")
     private Duration duration;
+
+    @JsonProperty("duration_in_traffic")
+    private DurationInTraffic durationInTraffic;
+
+    @JsonProperty("arrival_time")
+    private Time arrivalTime;
+
+    @JsonProperty("departure_time")
+    private Time departureTime;
+
+    @JsonProperty("start_location")
+    private Point startLocation;
+
+    @JsonProperty("end_location")
+    private Point endLocation;
+
+    @JsonProperty("start_address")
+    private String startAddress;
+
+    @JsonProperty("end_address")
+    private String endAddress;
+    
+    @JsonProperty("via_waypoint")
+    private String[] viaWayPoint;
+
+    public Step[] getSteps() {
+        return steps;
+    }
+
+    public void setSteps(Step[] steps) {
+        this.steps = steps;
+    }
+
+    public Distance getDistance() {
+        return distance;
+    }
+
+    public void setDistance(Distance distance) {
+        this.distance = distance;
+    }
+
+    public Duration getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Duration duration) {
+        this.duration = duration;
+    }
+
+    public DurationInTraffic getDurationInTraffic() {
+        return durationInTraffic;
+    }
+
+    public void setDurationInTraffic(DurationInTraffic durationInTraffic) {
+        this.durationInTraffic = durationInTraffic;
+    }
+
+    public Time getArrivalTime() {
+        return arrivalTime;
+    }
+
+    public void setArrivalTime(Time arrivalTime) {
+        this.arrivalTime = arrivalTime;
+    }
+
+    public Time getDepartureTime() {
+        return departureTime;
+    }
+
+    public void setDepartureTime(Time departureTime) {
+        this.departureTime = departureTime;
+    }
+
+    public Point getStartLocation() {
+        return startLocation;
+    }
+
+    public void setStartLocation(Point startLocation) {
+        this.startLocation = startLocation;
+    }
+
+    public Point getEndLocation() {
+        return endLocation;
+    }
+
+    public void setEndLocation(Point endLocation) {
+        this.endLocation = endLocation;
+    }
+
+    public String getStartAddress() {
+        return startAddress;
+    }
+
+    public void setStartAddress(String startAddress) {
+        this.startAddress = startAddress;
+    }
+
+    public String getEndAddress() {
+        return endAddress;
+    }
+
+    public void setEndAddress(String endAddress) {
+        this.endAddress = endAddress;
+    }
+
+    public String[] getViaWayPoint() {
+        return viaWayPoint;
+    }
+
+    public void setViaWayPoint(String[] viaWayPoint) {
+        this.viaWayPoint = viaWayPoint;
+    }
+
 }

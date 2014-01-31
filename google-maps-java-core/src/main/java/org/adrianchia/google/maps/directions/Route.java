@@ -14,7 +14,6 @@
 package org.adrianchia.google.maps.directions;
 
 import java.io.Serializable;
-import java.util.List;
 
 import org.adrianchia.google.maps.Bound;
 
@@ -30,24 +29,24 @@ public class Route implements Serializable {
 
     @JsonProperty("summary")
     private String summary;
-    
+
     @JsonProperty("copyrights")
     private String copyrights;
-    
+
     @JsonProperty("bounds")
     private Bound bounds;
-    
+
     @JsonProperty("legs")
-    private List<Leg> legs;
-    
+    private Leg[] legs;
+
     @JsonProperty("overview_polyline")
-    private OverviewPolyline overviewPolyline;
-    
+    private Polyline overviewPolyline;
+
     @JsonProperty("warnings")
-    private List<String> warnings;
-    
+    private String[] warnings;
+
     @JsonProperty("waypoint_order")
-    private List<Integer> waypointOrder;
+    private Integer[] waypointOrder;
 
     public String getSummary() {
         return summary;
@@ -73,35 +72,35 @@ public class Route implements Serializable {
         this.bounds = bounds;
     }
 
-    public List<Leg> getLegs() {
+    public Leg[] getLegs() {
         return legs;
     }
 
-    public void setLegs(List<Leg> legs) {
+    public void setLegs(Leg[] legs) {
         this.legs = legs;
     }
 
-    public OverviewPolyline getOverviewPolyline() {
+    public Polyline getOverviewPolyline() {
         return overviewPolyline;
     }
 
-    public void setOverviewPolyline(OverviewPolyline overviewPolyline) {
+    public void setOverviewPolyline(Polyline overviewPolyline) {
         this.overviewPolyline = overviewPolyline;
     }
 
-    public List<String> getWarnings() {
+    public String[] getWarnings() {
         return warnings;
     }
 
-    public void setWarnings(List<String> warnings) {
+    public void setWarnings(String[] warnings) {
         this.warnings = warnings;
     }
 
-    public List<Integer> getWaypointOrder() {
+    public Integer[] getWaypointOrder() {
         return waypointOrder;
     }
 
-    public void setWaypointOrder(List<Integer> waypointOrder) {
+    public void setWaypointOrder(Integer[] waypointOrder) {
         this.waypointOrder = waypointOrder;
     }
 
